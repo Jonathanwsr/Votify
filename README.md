@@ -1,8 +1,3 @@
-Claro! Aqui está o conteúdo formatado em Markdown para você copiar e colar diretamente no seu README.md:
-
-
----
-
 # Votify
 
 **Votify** é uma aplicação web para gerenciamento de votações. Com ela, é possível criar e gerenciar sessões de votação, pautas (agendas) e realizar operações de autenticação e recuperação de senha.

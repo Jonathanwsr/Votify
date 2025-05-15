@@ -1,0 +1,50 @@
+<div class="card" [ngClass]="{
+  'open': session.agendas?.[0]?.status === 'OPEN',
+  'closed': session.agendas?.[0]?.status === 'CLOSE',
+  'not-started': session.agendas?.[0]?.status === 'NOT_STARTED'
+}">
+  <h3 class="title">{{ session.title || 'Título não informado' }}</h3>
+
+  <div class="dates">
+    <span>
+      Aberta: {{ session.start_date | date: 'dd/MM/yyyy - HH:mm:ss' }}
+    </span>
+    <span>
+      Fechada: {{ session.end_date | date: 'dd/MM/yyyy - HH:mm:ss' }}
+    </span>
+  </div>
+
+  <p class="description">
+    {{ session.description }}
+  </p>
+
+  <div class="footer">
+    <div class="left">
+      <span class="organizer">
+        {{ session.organizer?.name || 'Organizador não informado' }}
+      </span>
+    </div>
+
+    <div class="right">
+      <span class="status" [ngClass]="{
+        'open': session.agendas?.[0]?.status === 'OPEN',
+        'closed': session.agendas?.[0]?.status === 'CLOSE',
+        'not-started': session.agendas?.[0]?.status === 'NOT_STARTED'
+      }">
+        {{ session.agendas?.[0]?.status || 'UNKNOWN' }}
+      </span>
+
+      <div class="actions">
+        <button title="Visualizar">
+          <span class="material-icons">visibility</span>
+        </button>
+        <a [routerLink]="['/sections/edit', session.id]" title="Editar">
+          <span class="material-icons">edit</span>
+        </a>
+        <a [routerLink]="['/sections/delete', session.id]" title="Excluir">
+          <span class="material-icons">delete</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+:host {
+  display: block;
+  background-color: #dddddd;
+  color: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+}
+
+
+.header-bar {
+  background-color: #4b2e2e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #facc91;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  color: #facc91;
+  cursor: pointer;
+}
+
+
+.nova-container {
+  background-color: #4b4b4b;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nova-btn {
+  background-color: #e9d5ff;
+  color: #4c1d95;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+
+.token-container {
+  margin: 1.5rem 2rem 0 2rem;
+}
+
+.token-label {
+  color: #facc15;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.token-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #dbdada;
+  border: 1px solid #444;
+  color: #030202;
+  border-radius: 0.75rem;
+  outline: none;
+}
+
+.token-input:focus {
+  border-color: #facc15;
+}
+
+
+.buscar-btn {
+  margin: 1rem 2rem;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.buscar-btn:hover {
+  background-color: #2563eb;
+}
+
+.erro {
+  margin: 1rem 2rem;
+  color: #f87171;
+}
+
+
+.sessao-lista {
+  margin: 2rem;
+}

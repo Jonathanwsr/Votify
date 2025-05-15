@@ -1,0 +1,82 @@
+<div class="container mt-4">
+  <h2 class="text-xl font-bold mb-4">Editar Sessão</h2>
+
+  
+  <div *ngIf="errors.length > 0" class="alert alert-danger mb-4">
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="update()">
+
+    <div class="form-group mb-4">
+      <label for="title" class="block font-semibold mb-1">Título:</label>
+      <input
+        id="title"
+        type="text"
+        formControlName="title"
+        class="input w-full border rounded p-2"
+        [class.border-red-500]="form.get('title')?.invalid && form.get('title')?.touched"
+      />
+      <div *ngIf="form.get('title')?.invalid && form.get('title')?.touched" class="text-red-600 mt-1 text-sm">
+        Título é obrigatório.
+      </div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="description" class="block font-semibold mb-1">Descrição:</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="input w-full border rounded p-2"
+      ></textarea>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="start_date" class="block font-semibold mb-1">Data de Início:</label>
+      <input
+        id="start_date"
+        type="datetime-local"
+        formControlName="start_date"
+        class="input w-full border rounded p-2"
+        [class.border-red-500]="form.get('start_date')?.invalid && form.get('start_date')?.touched"
+      />
+      <div *ngIf="form.get('start_date')?.invalid && form.get('start_date')?.touched" class="text-red-600 mt-1 text-sm">
+        Data de início é obrigatória.
+      </div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="end_date" class="block font-semibold mb-1">Data de Término:</label>
+      <input
+        id="end_date"
+        type="datetime-local"
+        formControlName="end_date"
+        class="input w-full border rounded p-2"
+        [class.border-red-500]="form.get('end_date')?.invalid && form.get('end_date')?.touched"
+      />
+      <div *ngIf="form.get('end_date')?.invalid && form.get('end_date')?.touched" class="text-red-600 mt-1 text-sm">
+        Data de término é obrigatória.
+      </div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="organizerId" class="block font-semibold mb-1">Organizador:</label>
+      <input
+        id="organizerId"
+        type="text"
+        formControlName="organizerId"
+        class="input w-full border rounded p-2"
+        [class.border-red-500]="form.get('organizerId')?.invalid && form.get('organizerId')?.touched"
+      />
+      <div *ngIf="form.get('organizerId')?.invalid && form.get('organizerId')?.touched" class="text-red-600 mt-1 text-sm">
+        Organizador é obrigatório.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary px-4 py-2 rounded">
+      Salvar
+    </button>
+  </form>
+</div>

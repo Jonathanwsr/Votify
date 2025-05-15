@@ -1,0 +1,34 @@
+<div class="header-bar">
+  <h2 class="logo">Votify</h2>
+  <div class="menu-icon">☰</div>
+</div>
+
+
+<div class="nova-container" style="background-color: rgb(141, 141, 141); padding: 20px;">
+  <button class="nova-btn" [routerLink]="['/sessions/create']" style="background-color: rgb(231, 115, 229); color: black;">
+    <span class="icon">➕</span> Nova
+  </button>
+</div>
+
+
+<div class="token-container">
+  <label for="token" class="token-label">
+    🔒 Autorização
+  </label>
+  <input id="token" [(ngModel)]="token" type="text" class="token-input" />
+</div>
+
+
+<button (click)="buscarSessoes()" class="buscar-btn">
+  Buscar Sessões
+</button>
+
+
+<div *ngIf="erro" class="erro">
+  Erro: {{ erro.message }}
+</div>
+
+
+<div *ngIf="resultado.length > 0" class="sessao-lista">
+  <app-section-card *ngFor="let sessao of resultado" [session]="sessao"></app-section-card>
+</div>

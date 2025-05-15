@@ -1,0 +1,137 @@
+.card {
+  position: relative;
+  background-color: #e5e5e5;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  color: #000;
+}
+
+
+.dates {
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+
+.description {
+  font-size: 0.95rem;
+  text-align: left;
+  color: #000;
+  margin-bottom: 1.25rem;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.organizer {
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: 500;
+}
+
+
+.status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  z-index: 2;
+  color: #fff;
+  background: #999; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+.status.open {
+  background-color: #22c55e; 
+}
+
+.status.closed {
+  background-color: #ef4444; 
+}
+
+.status.not-started {
+  background-color: #6b7280; 
+}
+
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.1);
+}
+
+.actions .material-icons {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description,
+  .dates {
+    font-size: 0.9rem;
+  }
+}

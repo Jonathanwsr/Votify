@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Detalhes da Sessão</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="session; else loading">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>ID:</strong> {{ session.id }}</li>
+      <li class="list-group-item"><strong>Título:</strong> {{ session.title }}</li>
+      <li class="list-group-item"><strong>Descrição:</strong> {{ session.description || 'Não informada' }}</li>
+      <li class="list-group-item"><strong>Data de Início:</strong> {{ session.start_date | date:'short' }}</li>
+      <li class="list-group-item"><strong>Data de Término:</strong> {{ session.end_date | date:'short' }}</li>
+      <li class="list-group-item"><strong>Organizador:</strong> {{ session.organizer?.name || 'Não informado' }}</li>
+    </ul>
+  </div>
+
+  <ng-template #loading>
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Carregando...</span>
+    </div>
+  </ng-template>
+</div>

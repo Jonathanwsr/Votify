@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Criar Sessão</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngIf="errors.length" class="alert alert-danger">
+      <div *ngFor="let error of errors">{{ error }}</div>
+    </div>
+
+    <div>
+      <label for="title">Título</label>
+      <input id="title" formControlName="title" type="text" />
+    </div>
+
+    <div>
+      <label for="description">Descrição</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+
+    <div>
+      <label for="startDate">Data de Início</label>
+      <input id="startDate" formControlName="startDate" type="date" />
+    </div>
+
+    <div>
+      <label for="endDate">Data de Término</label>
+      <input id="endDate" formControlName="endDate" type="date" />
+    </div>
+
+    <div>
+      <label for="organizerId">Organizador</label>
+      <input id="organizerId" formControlName="organizerId" type="number" />
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Criar Sessão</button>
+  </form>
+</div>

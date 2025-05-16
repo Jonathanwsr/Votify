@@ -19,6 +19,63 @@ O sistema é dividido em dois módulos:
 - Interface responsiva com Angular
 
 ---
+# CONTROLE DE ACESSO
+
+### Cada tipo de usuário tem sua funçoes  pre definidas com suas repectivas telas. 
+
+## 🔓 Acesso público (sem autenticação)
+Qualquer usuário (mesmo não autenticado) pode:
+
+Fazer POST em api/v1/auth/** → usado para login, registro, etc.
+
+Acessar o Swagger e a documentação da API:
+
+/swagger-ui.html
+
+/v3/api-docs/**
+
+/swagger-ui/**
+
+/swagger-resources/**
+
+/webjars/**
+
+## 👤 ASSOCIATE
+Usuários com a autoridade ASSOCIATE podem:
+
+ Fazer GET em:
+
+- api/v1/sessions/** → listar ou visualizar sessões.
+
+- api/v1/agendas/** → listar ou visualizar pautas/agendas.
+
+- Acessar (qualquer método) em:
+
+- api/v1/votes/** → votar (possivelmente POST/GET).
+
+## 👥 ORGANIZER
+Usuários com a autoridade ORGANIZER podem:
+
+- Fazer qualquer requisição (GET, POST, PUT, DELETE, etc.) em:
+
+- api/v1/sessions/** → criar, editar, excluir ou visualizar sessões.
+
+- api/v1/agendas/** → criar, editar, excluir ou visualizar pautas/agendas.
+
+- Acessar (qualquer método) em:
+
+- api/v1/users/** → gerenciamento de usuários (junto com ADMIN).
+
+## 🛠️ ADMIN
+Usuários com a autoridade ADMIN podem:
+
+- Acessar (qualquer método) em:
+
+- api/v1/users/** → gerenciamento completo de usuários.
+
+## 🔒 Qualquer outra requisição
+Requer autenticação, mas será bloqueada se o usuário não tiver permissão específica definida acima.
+
 
 ## Tecnologias Utilizadas
 

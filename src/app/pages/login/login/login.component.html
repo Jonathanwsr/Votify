@@ -1,21 +1,27 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label>Email:</label>
-    <input formControlName="email" type="email" />
-    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-      Email inválido
+<div class="page-wrapper">
+  <h2 class="title">Faça Login</h2>
+
+  <button class="register-btn" >Registrar-se</button>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Email:</label>
+      <input formControlName="email" type="email" />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Email inválido
+      </div>
     </div>
-  </div>
 
-  <div>
-    <label>Senha:</label>
-    <input formControlName="password" type="password" />
-    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-      A senha é obrigatória
+    <div>
+      <label>Senha:</label>
+      <input formControlName="password" type="password" />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        A senha é obrigatória
+      </div>
     </div>
-  </div>
 
-  <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
 
-  <div *ngIf="errorMessage">{{ errorMessage }}</div>
-</form>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+  </form>
+</div>

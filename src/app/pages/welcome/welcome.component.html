@@ -1,11 +1,15 @@
 <header class="header">
   <span class="logo">votify</span>
-  <div class="menu">
-    &#9776;
-  </div>
+  <div class="menu">&#9776;</div>
 </header>
 
 <main class="welcome-content">
   <h1>Bem-vindo ao Votify!</h1>
   <p>Você está logado com sucesso. Aqui será seu painel inicial.</p>
+
+  <div class="dashboard-buttons">
+    <button (click)="goToAssociates()">Ir para Área do Associado</button>
+    <button (click)="goToOrganizers()">Ir para Painel do Organizador</button>
+    <button (click)="goToAdmins()">Ir para Painel do Administrador</button>
+  </div>
 </main>

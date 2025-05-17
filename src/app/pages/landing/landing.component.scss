@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  width: 35%;
+  background-color: #651c32;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.checkmark {
+  background-color: white;
+  color: #651c32;
+  border-radius: 50%;
+  padding: 8px 12px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.right-panel {
+  width: 65%;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.right-panel h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.right-panel p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+}

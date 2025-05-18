@@ -1,26 +1,26 @@
 import { Routes } from '@angular/router';
-import { SectionsComponent } from './sections/sections.component';
-import { ViewComponent } from './sessions/view/view.component';
-import { EditComponent } from './sessions/edit/edit.component';
-import { DeleteComponent } from './sessions/delete/delete.component';
+import { SectionsComponent } from './features/sessions/sessions-compoents/sections.component';
+import { ViewComponent } from './features/sessions/section-card/view/view.component';
+import { EditComponent } from './features/sessions/section-card/edit/edit.component';
+import { DeleteComponent } from './features/sessions/section-card/delete/delete.component';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/landing/landing.component').then(m => m.LandingComponent)
+      import('./features/landing/landing.component').then(m => m.LandingComponent)
   },
 
   {
     path: 'welcome',
     loadComponent: () =>
-      import('./pages/welcome/welcome.component').then(m => m.WelcomeComponent)
+      import('./features/welcome/welcome.component').then(m => m.WelcomeComponent)
   },
 
   {
     path: 'login',
     loadComponent: () =>
-      import('./pages/login/login/login.component').then(m => m.LoginComponent)
+      import('./features/auth/login/login.component').then(m => m.LoginComponent)
   },
 
   { path: 'sections', component: SectionsComponent },
@@ -31,27 +31,35 @@ export const routes: Routes = [
   {
     path: 'sessions/create',
     loadComponent: () =>
-      import('./sessions/create/create.component').then(m => m.CreateComponent)
+      import('./features/sessions/section-card/create/create.component').then(m => m.CreateComponent)
   },
 
   {
     path: 'associates',
     loadComponent: () =>
-      import('./paths/associates/associates-dashboard/associates-dashboard.component')
+      import('./features/paths/associates/associates-dashboard/associates-dashboard.component')
         .then(m => m.AssociatesDashboardComponent)
   },
 
   {
     path: 'organizers',
     loadComponent: () =>
-      import('./paths/organizers/organizers-dashboard/organizers-dashboard.component')
+      import('./features/paths/organizers/organizers-dashboard/organizers-dashboard.component')
         .then(m => m.OrganizersDashboardComponent)
   },
 
   {
     path: 'admins',
     loadComponent: () =>
-      import('./paths/admins/admins-dashboard/admins-dashboard.component')
+      import('./features/paths/admins/admins-dashboard/admins-dashboard.component')
         .then(m => m.AdminsDashboardComponent)
-  }
+  },
+
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./features/auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
 ];

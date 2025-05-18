@@ -1,0 +1,32 @@
+<div class="register-container">
+  <h2>Crie sua conta</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+      <label>Nome</label>
+      <input type="text" formControlName="name" />
+    </div>
+    <div>
+      <label>Sobrenome</label>
+      <input type="text" formControlName="surname" />
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+    </div>
+    <div>
+      <label>Senha</label>
+      <input type="password" formControlName="password" />
+    </div>
+    <div>
+      <label>Tipo de usuário</label>
+      <select formControlName="role">
+        <option value="" disabled selected>Selecione</option>
+        <option value="ADMIN">Admin</option>
+        <option value="ORGANIZER">Organizador</option>
+        <option value="ASSOCIATE">Associado</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="loading">Registrar</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+</div>
